@@ -1,0 +1,138 @@
+
+/* Parte geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+  
+  /* parte do cabeçalho */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #e0e0e0;
+  }
+  
+  header img {
+    width: 50px;
+    margin-right: 10px;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* parte formulário */
+  form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  form button:hover {
+    background-color: #218838;
+  }
+  
+  /* parte tabela */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  
+  /* parte média final */
+  #media-final-container {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  #media-final-container span {
+    display: inline-block;
+    margin: 0 5px;
+  }
+  
+  /* parte rodapé */
+  footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  
+  /* Ajuste para a logo */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f1f1f1; 
+  }
+  
+  header .logo {
+    max-width: 50px; /* aqui é o tamanho da imagem */
+    margin-right: 10px; /* o espaçamento entre a logo e o título */
+    vertical-align: middle; /* para alinhar a logo ao centro verticalmente */
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; /* Negrito */
+}
+
+p, input, button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; /* Regular */
+}
+
+  
