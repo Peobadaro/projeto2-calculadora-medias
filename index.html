@@ -1,96 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calculadora de Médias</title>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-      </head>
-      
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Médias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js" defer></script>
+</head>
 <body>
-  <header>
-    <img src="logo.png" alt="Capelo e Diploma" id="logo">
-    <h1>Calculadora de médias</h1>
-  </header>
+    <header>
+        <img src="images/logo.png" alt="Capelo e Diploma" id="logo">
+        <h1>Calculadora de Médias</h1>
+    </header>
 
-  <main>
-    <form id="form-calculadora">
-      <input type="text" id="atividade" placeholder="Nome da atividade" required>
-      <input type="number" id="nota" placeholder="Nota" min="0" max="10" required>
-      <button type="button" id="btn-adicionar">Adicionar +</button>
-    </form>
+    <main>
+        <form id="form-calculadora">
+            <input type="text" id="atividade" placeholder="Nome da atividade" required>
+            <input type="number" id="nota" placeholder="Nota" min="0" max="10" required>
+            <button type="button" id="btn-adicionar">Adicionar +</button>
+        </form>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Nome da atividade</th>
-          <th>Nota</th>
-          <th>Aprovado?</th>
-        </tr>
-      </thead>
-      <tbody id="tabela-corpo">
-      </tbody>
-    </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome da atividade</th>
+                    <th>Nota</th>
+                    <th>Aprovado?</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-corpo">
+            </tbody>
+        </table>
 
-    <div id="media-final-container">
-      <span>Média final:</span>
-      <span id="media-final">---</span>
-      <span id="aprovado-final">---</span>
-    </div>
-  </main>
+        <div id="media-final-container">
+            <span>Média final:</span>
+            <span id="media-final">---</span>
+            <span id="aprovado-final">---</span>
+        </div>
+    </main>
 
-  <footer>
-    &copy; 2025 Calculadora de Médias
-  </footer>
-
-  <script>
-    const atividadeInput = document.querySelector("#atividade");
-    const notaInput = document.querySelector("#nota");
-    const adicionarBtn = document.querySelector("#btn-adicionar");
-    const tabelaCorpo = document.querySelector("#tabela-corpo");
-    const mediaFinal = document.querySelector("#media-final");
-    const aprovadoFinal = document.querySelector("#aprovado-final");
-
-    let notas = [];
-
-    adicionarBtn.addEventListener("click", () => {
-      const atividade = atividadeInput.value.trim();
-      const nota = parseFloat(notaInput.value.trim());
-
-      if (atividade === "" || isNaN(nota) || nota < 0 || nota > 10) {
-        alert("O valor deve ser entre 0 e 10.");
-        return;
-      }
-
-      const novaLinha = document.createElement("tr");
-      novaLinha.innerHTML = `
-        <td>${atividade}</td>
-        <td>${nota.toFixed(1)}</td>
-        <td>${nota >= 7 ? '<img src="aprovado.png" alt="Emoji Festejando" style="width: 20px;">' : '<img src="reprovado.png" alt="Reprovado" style="width: 20px;">'}</td>
-      `;
-      tabelaCorpo.appendChild(novaLinha);
-
-      notas.push(nota);
-      atividadeInput.value = "";
-      notaInput.value = "";
-      calcularMedia();
-    });
-
-    function calcularMedia() {
-      if (notas.length === 0) {
-        mediaFinal.textContent = "---";
-        aprovadoFinal.textContent = "---";
-        return;
-      }
-
-      const soma = notas.reduce((total, nota) => total + nota, 0);
-      const media = soma / notas.length;
-
-      mediaFinal.textContent = media.toFixed(1);
-      aprovadoFinal.innerHTML = media >= 7 ? '<span style="color: green;">Aprovado</span>' : '<span style="color: red;">Reprovado</span>';
-    }
-  </script>
+    <footer>
+        &copy; 2025 Calculadora de Médias
+    </footer>
 </body>
 </html>
