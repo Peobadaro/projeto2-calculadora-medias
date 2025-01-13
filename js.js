@@ -58,3 +58,25 @@ function calcularMedia() {
       ? '<img src="images/aprovado.png" alt="Aprovado" style="width: 20px;">'
       : '<img src="images/reprovado.png" alt="Reprovado" style="width: 20px;">';
 }
+
+function calcularMedia() {
+  if (notas.length === 0) {
+    mediaFinal.textContent = "---";
+    aprovadoFinal.textContent = "---";
+    aprovadoFinal.className = ""; // Remove classes de estilo
+    return;
+  }
+
+  const soma = notas.reduce((total, nota) => total + nota, 0);
+  const media = soma / notas.length;
+
+  mediaFinal.textContent = media.toFixed(2);
+
+  if (media >= 7) {
+    aprovadoFinal.textContent = "Aprovado";
+    aprovadoFinal.className = "aprovado"; // Adiciona a classe de aprovado
+  } else {
+    aprovadoFinal.textContent = "Reprovado";
+    aprovadoFinal.className = "reprovado"; // Adiciona a classe de reprovado
+  }
+}
